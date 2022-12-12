@@ -6,7 +6,7 @@ class Alimento{
         this.posicao = new Vetor(x, y);
         this.raio = raio;
         // a energia do pedaço de alimento é proporcinal à sua área
-        this.energia_alimento = Math.floor(Math.PI * Math.pow(this.raio, 2)) * 15;
+        this.energia_alimento = Math.floor(Math.PI * Math.pow(this.raio, 4)) * 15 // (Size, 2) × 15
 
         Alimento.alimentos.push(this);
 
