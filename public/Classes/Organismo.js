@@ -19,7 +19,7 @@ class Organismo{
         this.intervalo_ninhada = dna.intervalo_ninhada;
         this.sexo = dna.sexo;
 
-        // DNA -> Objeto para separar apenas os atributos passados para os descendentes
+        // DNA -> Objeto para aseparar apenas os atributos passados para os descendentes
         this.dna = new DNA(
             this.raio_inicial,
             this.vel_max,
@@ -45,15 +45,15 @@ class Organismo{
 
         // this.energia = this.energia_max * 0.75
         if(pai){
-            this.energia = (this.energia_max * (0.75 + Math.random() / 4)) / (pai.tamanho_ninhada) * 0.6; // Começa com uma parcela da energia máxima
+            this.energia = (this.energia_max * (1 + Math.random() / 4)) / (pai.tamanho_ninhada) * 1; // Começa com uma parcela da energia máxima
         } else{
-            this.energia = this.energia_max * 0.75
+            this.energia = this.energia_max * 1
         }
 
         this.taxa_gasto_energia;
         this.gasto_minimo = 0.0032 * Math.pow(Math.pow(this.raio, 2), 0.75); // Seguindo a lei de Kleiber para a taxa metabólica dos seres vivos
         this.taxa_gasto_energia_max = this.gasto_minimo + (Math.pow(this.raio_inicial * 1.5, 2) * Math.pow(this.vel_max, 2)) * 0.00012;;
-        this.chance_de_reproducao = 0.5;
+        this.chance_de_reproducao = 0.9;
         this.status;
         this.qdade_comida = 0;
         this.vezes_reproduzidas = 0;

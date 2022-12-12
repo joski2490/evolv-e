@@ -91,22 +91,22 @@
                             <label id="herbivoro" name="herbivoro" for="inputHerbivoros">Herbívoros: <label id="numHerb">300</label></label>
                             <input type="range" min="0" max="800" value="300" class="slider" step="1" id="inputHerbivoros" oninput="numHerb.textContent=inputHerbivoros.value">
                             <label id="alimento" name="alimento" for="inputAlimentos">Vegetais: <label id="numAli">800</label></label>
-                            <input type="range" min="0" max="3000" value="800" class="slider-yellow" step="5" id="inputAlimentos" oninput="numAli.textContent=inputAlimentos.value">    
+                            <input type="range" min="0" max="10000" value="800" class="slider-yellow" step="5" id="inputAlimentos" oninput="numAli.textContent=inputAlimentos.value">    
                         </div>
                         <label id="taxaalimento" name="taxaalimento" for="inputTaxaAlimentos">Aparição de vegetais: <label id="numTaxaAli">100</label> por segundo</label>
-                        <input type="range" min="0" max="1000" value="100" class="slider-yellow" step="1" id="inputTaxaAlimentos" oninput="mudouInputTaxa()"
+                        <input type="range" min="0" max="2000" value="100" class="slider-yellow" step="1" id="inputTaxaAlimentos" oninput="mudouInputTaxa()"
                             onchange="mudaIntervaloAlimentos(inputTaxaAlimentos.value)">
                         
 
 
                         <label id="probMutacao" name="probMutacao" for="inputProbMutacao">Probabilidade de mutação: <label id="numProbMutacao">10</label>%</label>
-                        <input type="range" min="0" max="100" value="10" class="slider-blue" id="inputProbMutacao" oninput="mudouInputProb()"
+                        <input type="range" min="0" max="500" value="10" class="slider-blue" id="inputProbMutacao" oninput="mudouInputProb()"
                             onchange="mudaProbMutacao(inputProbMutacao.value)">
 
 
                     
                         <label id="magMutacao" name="magMutacao" for="inputMagMutacao">Magnitude das mutações: <label id="numMagMutacao">5</label>%</label>
-                        <input type="range" min="0" max="100" value="5" class="slider-blue" id="inputMagMutacao" oninput="mudouInputMag()"
+                        <input type="range" min="0" max="200" value="5" class="slider-blue" id="inputMagMutacao" oninput="mudouInputMag()"
                             onchange="mudaMagMutacao(inputMagMutacao.value)">
 
                         <div id="divTamanhoUniverso">
@@ -360,7 +360,7 @@
             mostrarBtnGraficos();
             insereDadosGrafico = setInterval(insertNextDataChart, 1000);
 
-            setInterval(checaPopulacoesDivididas, 1000);
+            setInterval(checaPopulacoesDivididas, 2000);
             inputTalim = document.getElementById("inputTaxaAlimentos");
             mudaIntervaloAlimentos(inputTalim.value, true);
             inputPMut = document.getElementById("inputProbMutacao");

@@ -169,8 +169,8 @@ function trackTransforms(c){
 
 
 
-var fome_c = 0.8; // porcentagem da energia máxima acima da qual eles não comerão
-var fome_h = 0.8; // porcentagem da energia máxima acima da qual eles não comerão
+var fome_c = 0.999; // porcentagem da energia máxima acima da qual eles não comerão
+var fome_h = 0.999; // porcentagem da energia máxima acima da qual eles não comerão
 
 var mudarGrafico = false;
 
@@ -194,7 +194,7 @@ var taxaEnergMedC;
 
 // Variáveis para alterações nas mutações
 // var probabilidade_mutacao = labelProb; // chances de cada gene (atributo) sofrer mutação
-var magnitude_mutacao = 0.1; // magnitude da mutação (o quanto vai variar)
+var magnitude_mutacao = 0.9; // magnitude da mutação (o quanto vai variar)
 
 var lado_direito_vazio = true;
 var lado_esquerdo_vazio = true;
@@ -358,13 +358,13 @@ function geraAlimento(x,y){
 }
 
 function geraCarnivoro(x,y){ // função para poder adicionar mais carnívoros manualmente 
-    var raio_inicial = geraNumeroPorIntervalo(3, 8);
-    var vel_max = geraNumeroPorIntervalo(1, 2.2); 
-    var forca_max = geraNumeroPorIntervalo(0.01, 0.05);
+var raio_inicial = geraNumeroPorIntervalo(2, 6); // orig 2, 8
+    var vel_max = geraNumeroPorIntervalo(1, 2.2);  // orig 1, 2.2
+    var forca_max = geraNumeroPorIntervalo(0.01, 0.05); // orig 0.01, 0.05
     var cor = geraCor();
-    var raio_deteccao_inicial = geraNumeroPorIntervalo(40, 120);
-    var ninhada_min = geraInteiro(1, 1);
-    var ninhada_max = ninhada_min + geraInteiro(1, 8);
+    var raio_deteccao_inicial = geraNumeroPorIntervalo(40, 120); //40,120
+    var ninhada_min = geraInteiro(1, 1); // 1,1
+    var ninhada_max = ninhada_min + geraInteiro(1, 4);
     var intervalo_ninhada = [ninhada_min, ninhada_max];
     var sexo;
 
@@ -400,13 +400,13 @@ function geraCarnivoro(x,y){ // função para poder adicionar mais carnívoros m
 
 
 function geraHerbivoro(x,y){ // função para poder adicionar mais herbivoros manualmente    
-    var raio_inicial = geraNumeroPorIntervalo(3, 8);
-    var vel_max = geraNumeroPorIntervalo(1, 2.2); 
-    var forca_max = geraNumeroPorIntervalo(0.01, 0.05);
+    var raio_inicial = geraNumeroPorIntervalo(4, 8); // 3,8
+    var vel_max = geraNumeroPorIntervalo(1, 2.2); // 1,2.2
+    var forca_max = geraNumeroPorIntervalo(0.01, 0.05);// 0.01, 0.05
     var cor = geraCor();
-    var raio_deteccao_inicial = geraNumeroPorIntervalo(40, 120);
-    var ninhada_min = geraInteiro(1, 1);
-    var ninhada_max = ninhada_min + geraInteiro(1, 8);
+    var raio_deteccao_inicial = geraNumeroPorIntervalo(40, 120);// 40,120
+    var ninhada_min = geraInteiro(1, 1); //1,1
+    var ninhada_max = ninhada_min + geraInteiro(1, 6); //1,8
     var intervalo_ninhada = [ninhada_min, ninhada_max];
     var sexo;
 
@@ -571,7 +571,7 @@ function mutacaoNinhada(ninhada_min, ninhada_max) {
             ninhada_min = 0;
         }
         if(ninhada_max <= ninhada_min) {
-            ninhada_max = ninhada_min + 1;
+            ninhada_max = ninhada_min + 4; // orig 1
         }
     }
     
@@ -591,9 +591,9 @@ function criaAlimentosGradativo(){
             if(lado_esquerdo_vazio){ // Se não houver população no lado esquerdo, não gerará alimentos lá
                 var x = geraNumeroPorIntervalo(universoWidth/2 + 31, universoWidth - 31);
                 var y = Math.random() * (universoHeight - 62) + 31;
-                var raio = Math.random() * 1.5 + 1;
+                var raio = Math.random() * 0.5 + 1;
     
-                if(Alimento.alimentos.length < 3000){ // Limitador para não sobrecarregar a simulação
+                if(Alimento.alimentos.length < 1000){ // Limitador para não sobrecarregar a simulação
                     new Alimento(x, y, raio);
                 }
             }
@@ -602,7 +602,7 @@ function criaAlimentosGradativo(){
                 var y = Math.random() * (universoHeight - 62) + 31;
                 var raio = Math.random() * 1.5 + 1;
     
-                if(Alimento.alimentos.length < 3000){ // Limitador para não sobrecarregar a simulação
+                if(Alimento.alimentos.length < 1000){ // Limitador para não sobrecarregar a simulação
                     new Alimento(x, y, raio);
                 }
             }
@@ -611,7 +611,7 @@ function criaAlimentosGradativo(){
                 var y = Math.random() * (universoHeight - 62) + 31;
                 var raio = Math.random() * 1.5 + 1;
 
-                if(Alimento.alimentos.length < 3000){ // Limitador para não sobrecarregar a simulação
+                if(Alimento.alimentos.length < 1000){ // Limitador para não sobrecarregar a simulação
                     new Alimento(x, y, raio);
                 }
             }
@@ -620,7 +620,7 @@ function criaAlimentosGradativo(){
             var y = Math.random() * (universoHeight - 62) + 31;
             var raio = Math.random() * 1.5 + 1;
 
-            if(Alimento.alimentos.length < 3000){ // Limitador para não sobrecarregar a simulação
+            if(Alimento.alimentos.length < 1000){ // Limitador para não sobrecarregar a simulação
                 new Alimento(x, y, raio);
             }
         }
@@ -628,11 +628,11 @@ function criaAlimentosGradativo(){
 }
 
 function mudaIntervaloAlimentos(novoValor, criar=false) {
-    novoTempo = 1000 / novoValor
+    novoTempo = 100 / novoValor
     if(!criar) {
         clearInterval(intervaloTaxaAlimentos);
     }
-    if(novoTempo > 1000) return;
+    if(novoTempo > 100) return;
     if(antesDoPlay) return;
     intervaloTaxaAlimentos = setInterval(criaAlimentosGradativo, novoTempo)
 }
@@ -642,7 +642,7 @@ function mudaProbMutacao(novoValor){
 }
 
 function mudaMagMutacao(novoValor){
-    magnitude_mutacao = novoValor / 100;
+    magnitude_mutacao = novoValor / 150;
 }
 
 function desenhaDivisao(){
