@@ -405,13 +405,13 @@ function geraHerbivoro(x,y){ // função para poder adicionar mais herbivoros ma
     // Initial size
     var raio_inicial = geraNumeroPorIntervalo(1, 4);//3,8
     // Initial speed
-    var vel_max = geraNumeroPorIntervalo(1, 5); //1,2.2
+    var vel_max = geraNumeroPorIntervalo(3, 5); //1,2.2
     //Initial agility
-    var forca_max = geraNumeroPorIntervalo(0.01, 0.5);//0.01,0.05
+    var forca_max = geraNumeroPorIntervalo(0.5, 0.9);//0.01,0.05
     // color
     var cor = geraCor();
     // detection size
-    var raio_deteccao_inicial = geraNumeroPorIntervalo(80, 240);//40,120
+    var raio_deteccao_inicial = geraNumeroPorIntervalo(10, 40);//40,120
     //min offspring
     var ninhada_min = geraInteiro(3, 3);//1,1
     // max offspring
