@@ -198,7 +198,7 @@ class Herbivoro extends Organismo{
             c.fillStyle = "rgba(" + this.cor.substr(4).replace(")","") + ",0.15)";
             c.strokeStyle = "rgba(" + this.cor.substr(4).replace(")","") + ",0.15)";
         } else {
-            c.fillStyle = this.cor;
+            //c.fillStyle = this.cor;
             c.strokeStyle = this.cor;
         }
 
