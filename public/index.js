@@ -168,9 +168,11 @@ function trackTransforms(c){
 
 
 
-
-var fome_c = 0.8; // porcentagem da energia máxima acima da qual eles não comerão
-var fome_h = 0.8; // porcentagem da energia máxima acima da qual eles não comerão
+// % of energy needed to reproduce
+// carnivore 
+var fome_c = 0.7; // porcentagem da energia máxima acima da qual eles não comerão
+// herbivore
+var fome_h = 0.1; // porcentagem da energia máxima acima da qual eles não comerão
 
 var mudarGrafico = false;
 
@@ -400,14 +402,23 @@ function geraCarnivoro(x,y){ // função para poder adicionar mais carnívoros m
 
 
 function geraHerbivoro(x,y){ // função para poder adicionar mais herbivoros manualmente    
-    var raio_inicial = geraNumeroPorIntervalo(3, 8);
-    var vel_max = geraNumeroPorIntervalo(1, 2.2); 
-    var forca_max = geraNumeroPorIntervalo(0.01, 0.05);
+    // Initial size
+    var raio_inicial = geraNumeroPorIntervalo(1, 4);//3,8
+    // Initial speed
+    var vel_max = geraNumeroPorIntervalo(1, 5); //1,2.2
+    //Initial agility
+    var forca_max = geraNumeroPorIntervalo(0.01, 0.5);//0.01,0.05
+    // color
     var cor = geraCor();
-    var raio_deteccao_inicial = geraNumeroPorIntervalo(40, 120);
-    var ninhada_min = geraInteiro(1, 1);
-    var ninhada_max = ninhada_min + geraInteiro(1, 8);
+    // detection size
+    var raio_deteccao_inicial = geraNumeroPorIntervalo(80, 240);//40,120
+    //min offspring
+    var ninhada_min = geraInteiro(3, 3);//1,1
+    // max offspring
+    var ninhada_max = ninhada_min + geraInteiro(3, 12);//1,8
+    // litter interval
     var intervalo_ninhada = [ninhada_min, ninhada_max];
+    //gender
     var sexo;
 
     if(Math.random() < 0.5){
