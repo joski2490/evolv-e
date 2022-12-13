@@ -202,7 +202,7 @@ class Herbivoro extends Organismo{
             c.strokeStyle = this.cor;
         }
 
-        c.fill();
+        //c.fill();
         c.stroke();
         // desenhando o raio de detecção
           //   c.beginPath();
