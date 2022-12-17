@@ -360,13 +360,13 @@ function geraAlimento(x,y){
 }
 
 function geraCarnivoro(x,y){ // função para poder adicionar mais carnívoros manualmente 
-    var raio_inicial = geraNumeroPorIntervalo(3, 8);
-    var vel_max = geraNumeroPorIntervalo(1, 2.2); 
-    var forca_max = geraNumeroPorIntervalo(0.01, 0.05);
+    var raio_inicial = geraNumeroPorIntervalo(2, 6);
+    var vel_max = geraNumeroPorIntervalo(1, 4); 
+    var forca_max = geraNumeroPorIntervalo(0.1, 0.5);
     var cor = geraCor();
     var raio_deteccao_inicial = geraNumeroPorIntervalo(40, 120);
     var ninhada_min = geraInteiro(1, 1);
-    var ninhada_max = ninhada_min + geraInteiro(1, 8);
+    var ninhada_max = ninhada_min + geraInteiro(2, 4);
     var intervalo_ninhada = [ninhada_min, ninhada_max];
     var sexo;
 
@@ -403,11 +403,11 @@ function geraCarnivoro(x,y){ // função para poder adicionar mais carnívoros m
 
 function geraHerbivoro(x,y){ // função para poder adicionar mais herbivoros manualmente    
     // Initial size
-    var raio_inicial = geraNumeroPorIntervalo(1, 4);//3,8
+    var raio_inicial = geraNumeroPorIntervalo(1, 5);//3,8
     // Initial speed
-    var vel_max = geraNumeroPorIntervalo(3, 5); //1,2.2
+    var vel_max = geraNumeroPorIntervalo(0.001, 3); //1,2.2
     //Initial agility
-    var forca_max = geraNumeroPorIntervalo(0.5, 0.9);//0.01,0.05
+    var forca_max = geraNumeroPorIntervalo(0.001, 0.1);//0.01,0.05
     // color
     var cor = geraCor();
     // detection size
@@ -415,7 +415,7 @@ function geraHerbivoro(x,y){ // função para poder adicionar mais herbivoros ma
     //min offspring
     var ninhada_min = geraInteiro(3, 3);//1,1
     // max offspring
-    var ninhada_max = ninhada_min + geraInteiro(3, 12);//1,8
+    var ninhada_max = ninhada_min + geraInteiro(6, 12);//1,8
     // litter interval
     var intervalo_ninhada = [ninhada_min, ninhada_max];
     //gender
