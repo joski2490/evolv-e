@@ -14,7 +14,7 @@ const c = canvas.getContext('2d');
 
 // ---------------------------------------ZOOM IN / PANNING--------------------------------------------------
 
-var tamanhoUniverso = 3;
+var tamanhoUniverso = 1;
 
 var universoWidth = canvas.width * tamanhoUniverso; 
 var universoHeight = canvas.height * tamanhoUniverso; 
@@ -355,7 +355,7 @@ var telaDividida;
 var limitador_de_loop = 0;
 
 function geraAlimento(x,y){
-    var raio = geraNumeroPorIntervalo(1, 2);
+    var raio = geraNumeroPorIntervalo(1, 3);
     return new Alimento(x, y, raio);
 }
 
@@ -405,9 +405,9 @@ function geraHerbivoro(x,y){ // função para poder adicionar mais herbivoros ma
     // Initial size
     var raio_inicial = geraNumeroPorIntervalo(1, 5);//3,8
     // Initial speed
-    var vel_max = geraNumeroPorIntervalo(0.001, 3); //1,2.2
+    var vel_max = geraNumeroPorIntervalo(0.01, 3); //1,2.2
     //Initial agility
-    var forca_max = geraNumeroPorIntervalo(0.001, 0.1);//0.01,0.05
+    var forca_max = geraNumeroPorIntervalo(0.01, 0.1);//0.01,0.05
     // color
     var cor = geraCor();
     // detection size
