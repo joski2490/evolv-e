@@ -191,19 +191,19 @@ class Herbivoro extends Organismo{
         // var direcao = this.vel.headingDegs();
         c.beginPath();
         // desenhaOval(c, this.posicao.x, this.posicao.y, this.raio*2, this.raio, 'red');
-        c.ellipse(this.posicao.x, this.posicao.y, this.raio * 1.8, this.raio * 3.1, this.vel.headingRads() - Math.PI/-1, 0, -1.666 * Math.PI);
+        c.ellipse(this.posicao.x, this.posicao.y, this.raio * 1.8, this.raio * 3.1, this.vel.headingRads() - Math.PI/1.43, 0, -0.6 * Math.PI);
         //0.7, 1.1 // pi/2, 0, pi*2
         // console.log(this.vel.headingDegs());
         if(Carnivoro.highlight) {
             c.fillStyle = "rgba(" + this.cor.substr(4).replace(")","") + ",0.15)";
             c.strokeStyle = "rgba(" + this.cor.substr(4).replace(")","") + ",0.15)";
         } else {
-            //c.fillStyle = this.cor;
-            c.strokeStyle = this.cor;
+            c.fillStyle = this.cor;
+            //c.strokeStyle = this.cor;
         }
 
-        //c.fill();
-        c.stroke();
+        c.fill();
+       // c.stroke();
         // desenhando o raio de detecção
           //   c.beginPath();
             // c.arc(this.posicao.x, this.posicao.y, this.raio_deteccao, 0, Math.PI * 2);
