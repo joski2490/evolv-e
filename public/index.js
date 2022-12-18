@@ -14,7 +14,7 @@ const c = canvas.getContext('2d');
 
 // ---------------------------------------ZOOM IN / PANNING--------------------------------------------------
 
-var tamanhoUniverso = 1;
+var tamanhoUniverso = 3;
 
 var universoWidth = canvas.width * tamanhoUniverso; 
 var universoHeight = canvas.height * tamanhoUniverso; 
@@ -170,9 +170,9 @@ function trackTransforms(c){
 
 // % of energy needed to reproduce
 // carnivore 
-var fome_c = 0.7; // porcentagem da energia máxima acima da qual eles não comerão
+var fome_c = 0.5; // porcentagem da energia máxima acima da qual eles não comerão
 // herbivore
-var fome_h = 0.1; // porcentagem da energia máxima acima da qual eles não comerão
+var fome_h = 0.999; // porcentagem da energia máxima acima da qual eles não comerão
 
 var mudarGrafico = false;
 
@@ -361,10 +361,10 @@ function geraAlimento(x,y){
 
 function geraCarnivoro(x,y){ // função para poder adicionar mais carnívoros manualmente 
     var raio_inicial = geraNumeroPorIntervalo(2, 6);
-    var vel_max = geraNumeroPorIntervalo(1, 4); 
-    var forca_max = geraNumeroPorIntervalo(0.1, 0.5);
+    var vel_max = geraNumeroPorIntervalo(3, 6); 
+    var forca_max = geraNumeroPorIntervalo(0.01, 0.05);
     var cor = geraCor();
-    var raio_deteccao_inicial = geraNumeroPorIntervalo(40, 120);
+    var raio_deteccao_inicial = geraNumeroPorIntervalo(80, 320);
     var ninhada_min = geraInteiro(1, 1);
     var ninhada_max = ninhada_min + geraInteiro(2, 4);
     var intervalo_ninhada = [ninhada_min, ninhada_max];
@@ -403,11 +403,11 @@ function geraCarnivoro(x,y){ // função para poder adicionar mais carnívoros m
 
 function geraHerbivoro(x,y){ // função para poder adicionar mais herbivoros manualmente    
     // Initial size
-    var raio_inicial = geraNumeroPorIntervalo(10, 15);//3,8
+    var raio_inicial = geraNumeroPorIntervalo(2, 6);//3,8
     // Initial speed
-    var vel_max = geraNumeroPorIntervalo(0, 1); //1,2.2
+    var vel_max = geraNumeroPorIntervalo(0, 0.001); //1,2.2
     //Initial agility
-    var forca_max = geraNumeroPorIntervalo(0.5, 0.9);//0.01,0.05
+    var forca_max = geraNumeroPorIntervalo(1.5, 1.9);//0.01,0.05
     // color
     var cor = geraCor();
     // detection size
