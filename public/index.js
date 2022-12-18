@@ -403,11 +403,11 @@ function geraCarnivoro(x,y){ // função para poder adicionar mais carnívoros m
 
 function geraHerbivoro(x,y){ // função para poder adicionar mais herbivoros manualmente    
     // Initial size
-    var raio_inicial = geraNumeroPorIntervalo(1, 5);//3,8
+    var raio_inicial = geraNumeroPorIntervalo(10, 15);//3,8
     // Initial speed
-    var vel_max = geraNumeroPorIntervalo(0.01, 3); //1,2.2
+    var vel_max = geraNumeroPorIntervalo(0, 1); //1,2.2
     //Initial agility
-    var forca_max = geraNumeroPorIntervalo(0.01, 0.1);//0.01,0.05
+    var forca_max = geraNumeroPorIntervalo(0.5, 0.9);//0.01,0.05
     // color
     var cor = geraCor();
     // detection size
