@@ -191,7 +191,7 @@ class Herbivoro extends Organismo{
         // var direcao = this.vel.headingDegs();
         c.beginPath();
         // desenhaOval(c, this.posicao.x, this.posicao.y, this.raio*2, this.raio, 'red');
-        c.ellipse(this.posicao.x, this.posicao.y, this.raio * 0.7, this.raio * 1.1, this.vel.headingRads() - Math.PI/2, 0, Math.PI * -1);
+        c.ellipse(this.posicao.x, this.posicao.y, this.raio * 0.7, this.raio * 1.8, this.vel.headingRads() - Math.PI/2, 0, -3 * Math.PI);
         // console.log(this.vel.headingDegs());
         if(Carnivoro.highlight) {
             c.fillStyle = "rgba(" + this.cor.substr(4).replace(")","") + ",0.15)";
