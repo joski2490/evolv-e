@@ -58,7 +58,7 @@ class Organismo{
         this.qdade_comida = 0;
         this.vezes_reproduzidas = 0;
         this.segundo_nascimento = segundos_totais; // "segundo" é a variável global
-        this.tempo_vida = parseInt(geraNumeroPorIntervalo(200, 300)); // tempo de vida do organismo
+        this.tempo_vida = parseInt(geraNumeroPorIntervalo(100, 500)); //tempo de vida do organismo --- original 200, 300
         this.tempo_vivido = 0;
         this.tamanho_ninhada;
 
@@ -103,7 +103,7 @@ class Organismo{
 
                     this.tamanho_ninhada = geraInteiro(this.intervalo_ninhada[0], this.intervalo_ninhada[1] + 1);
                     for(var i = 0; i < this.tamanho_ninhada; i++){
-                        if(Math.random() < 0.2){ // Para espaçar os nascimentos
+                        if(Math.random() < 0.7{ // Para espaçar os nascimentos --- original 0.2
                             this.reproduzir();
                         }
                     }
