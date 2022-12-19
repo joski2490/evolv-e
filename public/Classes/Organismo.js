@@ -103,7 +103,7 @@ class Organismo{
 
                     this.tamanho_ninhada = geraInteiro(this.intervalo_ninhada[0], this.intervalo_ninhada[1] + 1);
                     for(var i = 0; i < this.tamanho_ninhada; i++){
-                        if(Math.random() < 0.7{ // Para espaçar os nascimentos --- original 0.2
+                        if(Math.random() < 0.7){ // Para espaçar os nascimentos --- original 0.2
                             this.reproduzir();
                         }
                     }
