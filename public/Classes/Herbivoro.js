@@ -190,8 +190,17 @@ class Herbivoro extends Organismo{
     display(){
         // var direcao = this.vel.headingDegs();
         c.beginPath();
+        c.linewidth(2);
+        let sp = { x: this.posicao.x, y: this.posicao.y };
+        let cp = { x: this.raio * 2, y: this.raio * 1 };
+        let ep = { x: this.posicao.x + this.raio, y: this.posicao.y + this.raio };
+        c.moveTo(this.sp.x, this.sp.y);
+        c.bezierCurveTo(this.sp.x + this.cp.x, this.sp.y + this.cp.y, this.sp.x + this.cp.x * 3 * -1, this.sp.y + this.cp.y * 3 * -1, this.ep.x, this.ep.y);
+        c.moveTo(this.sp.x, this.sp.y);
+        c.bezierCurveTo(this.sp.x + this.cp.x * -1, this.sp.y + this.cp.y * 1, this.sp.x + this.cp.x * 3, this.sp.y + this.cp.y * 3, this.ep.x, this.ep.y);
+        c.closePath();
         // desenhaOval(c, this.posicao.x, this.posicao.y, this.raio*2, this.raio, 'red');
-        c.ellipse(this.posicao.x, this.posicao.y, this.raio * 0.5, this.raio * 1.3, this.vel.headingRads() - Math.PI/2, 0, Math.PI * 2 * -1);
+        //c.ellipse(this.posicao.x, this.posicao.y, this.raio * 0.5, this.raio * 1.3, this.vel.headingRads() - Math.PI/2, 0, Math.PI * 2 * -1);
         // console.log(this.vel.headingDegs());
         if(Carnivoro.highlight) {
            // c.fillStyle = "rgba(" + this.cor.substr(4).replace(")","") + ",0.15)";
